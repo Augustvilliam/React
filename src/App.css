@@ -82,7 +82,7 @@
     border-color: var(--color-info);
   }
   
-  :root {
+  :root[data-theme="light"] {
     --color-white:#ffffff;
     --color-text1:#131022;
     --color-text2:#585C7B;
@@ -110,7 +110,7 @@
     --color-chefron-open: #FFFFFF;
   }
   
-  .dark {
+  :root[data-theme="dark"] {
     --color-white:#ffffff;
     --color-text1:#ffffff;
     --color-text2:hsla(0, 0%, 100%, 0.7);
@@ -136,7 +136,6 @@
     --color-contact-bg:hsl(225, 100%, 98%, 0.04);
     --color-chevron: #FFFFFF;
     --color-chefron-open: #FFFFFF;
-
   }
   
   .btn-primary {
@@ -666,7 +665,7 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-:root {
+:root[data-theme="light"] {
     --clr-gradient: linear-gradient(to top, rgba(99, 102, 241, 10%), rgba(218, 70, 239, 5%), rgba(241, 244, 253, 7%));
     --clr-btn-bg:#F3F6FF;
 
@@ -679,13 +678,13 @@
 html{
   color-scheme: light;
 }
-.dark{
+
+:root[data-theme="dark"]{
   color-scheme: dark;
    --clr-bg: hsla(0, 0%, 100%, 0.04);
    .lightmode-only{
     display:none;  
   } 
-
 } 
 .flex-me{
   display:flex;
