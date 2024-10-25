@@ -1,53 +1,29 @@
-// För att det här scriptet ska fungera så behöver du lägga till en .dark klass i din css där du stylar dina färger
-// du behöver också en checkbox med id="darkmode-switch" i din HTML
+let isDarkMode = false
 
+const getSavedTheme = () => {
+  const savedTheme = locaslStorage.getItem('theme');
+  const darkModeSwitch = document.querySelector("#darkModeSwitch")
 
-const darkmodeSwitch = document.querySelector('#darkmode-switch')
-const hasSetDarkmode = localStorage.getItem('darkmode')
-const questions = document.querySelectorAll ('.question')
-
-if(hasSetDarkmode == null) {
-  if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    enableDarkMode()
+  if (savedTheme === 'dark'){
+    isDarkMode = true;
+    document.documentElement.setAttribute('dara-theme', 'dark');
+    darkModeSwitch.checked = true;
   } else {
-    disableDarkMode()
+    isDarkMode = false;
+    document.documentElement.setAttribute('dara-theme', 'light');
+    darkModeSwitch.checked =false;
   }
-} else if(hasSetDarkmode === 'on') {
-  enableDarkMode()
-} else if(hasSetDarkmode === 'off') {
-  disableDarkMode()
 }
-darkmodeSwitch.addEventListener('change', () => {
-  if(darkmodeSwitch.checked) {
-    enableDarkMode()
-    localStorage.setItem('darkmode', 'on')
+
+const toggleDarkMode =() => {
+  const newMode = !isDarkMode;
+  isDarkMode = newMode;
+
+  if (newMode){
+    document.documentElement.setAttribute('data-theme', 'dark');
+    locaslStorage.setItem('theme', 'dark');
   } else {
-    disableDarkMode()
-    localStorage.setItem('darkmode', 'off')
+    document.documentElement.setAttribute('data-theme', 'light');
+    locaslStorage.setItem('theme', 'light');
   }
-})
-function enableDarkMode() {
-  darkmodeSwitch.checked = true
-  document.documentElement.classList.add('dark')
-}
-function disableDarkMode() {
-  darkmodeSwitch.checked = false
-  document.documentElement.classList.remove('dark')
-}
-
-
-
-
-questions.forEach(question => {
-  question.addEventListener('click', e => {
-
-
-
-
-  const parent = question.parentElement;
-  const answer = parent.querySelector('.answer');
-  const acordionBtn = parent.querySelector ('.btn-round');     
-  answer.classList.toggle('open')
-  acordionBtn.classList.toggle('close')
-  })
-})
+};

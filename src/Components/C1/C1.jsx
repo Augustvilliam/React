@@ -1,4 +1,5 @@
 import React from 'react'
+import Darkmode from './darkmode'
 
 const C1 = () => {
   return (
@@ -13,13 +14,7 @@ const C1 = () => {
                         <a href="#">Features</a>
                     </nav>
                     <a className="contact-link" href="contact.html">Contact</a>
-                    <div className="tdm">
-                <span className="dark-mode-lable">Dark mode</span>
-                <label htmlFor="darkmode-switch" className="switch">
-                    <input type="checkbox" id="darkmode-switch"></input>
-                    <span className="slider round"></span>
-                </label>
-                    </div>
+                    <Darkmode />
                     <a className="btn-sign-in" href="#">
                         <img src="src/assets/img/Bg/signin.svg" alt="gubbe"></img>
                         sign in / up
