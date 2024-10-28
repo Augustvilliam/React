@@ -764,6 +764,17 @@ body{
   .logo{
     margin-left: 0.5rem;
     padding-top: .16rem;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:.5rem;
+    text-decoration: none;
+    p{
+      color:var(--color-text1);
+      font-size:21.8px;
+      font-weight: 800;
+    }
+
   }
   
   .feat {

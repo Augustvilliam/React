@@ -8,8 +8,10 @@ const C1 = () => {
          <div className="c1 bg-gradient">
             <div className="container">
                 <div className="c1a"> 
-                    <a className="logo darkmode-only-block" href="index.html"><img src="src/assets/img/Bg/silicon-dark.svg" alt="sili logo"></img></a> 
-                    <a className="logo lightmode-only" href="index.html"><img src="src/assets/img/Bg/silicon.svg" alt="sili logo"></img></a> 
+                    <a className="logo" href="index.html">
+                        <img src="src/assets/img/silicon.svg" alt="sili logo"></img>
+                        <p>Silicon</p>
+                        </a> 
                     <nav className="feat">
                         <a href="#">Features</a>
                     </nav>
