@@ -708,9 +708,15 @@ html{
 :root[data-theme="dark"]{
   color-scheme: dark;
    --clr-bg: hsla(0, 0%, 100%, 0.04);
-   .lightmode-only{
-    display:none;  
+   .darkmode-only-flex{
+    display:flex;  
   } 
+  .lightmode-only{
+    display:none;
+  }
+  .darkmode-only-block{
+    display:block;
+  }
 } 
 .flex-me{
   display:flex;
@@ -1010,9 +1016,12 @@ body{
     justify-content: start;
     border-radius: .5rem;
     border-radius: .5rem;
+    transition: all 500ms;
+
   }
-  .faq-expanded{
+  .faq-expanded.faq{
     border:1px solid var(--color-border);
+    transition: all 500ms;
     .question{
       .btn-round-acordion{
         rotate: 180deg;
