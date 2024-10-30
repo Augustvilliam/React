@@ -1274,9 +1274,57 @@ body{
     padding-bottom:1rem;
   }
 
+
+}
+.profile{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  justify-content: start;
+  align-items:center;
+  text-align: start;
+  margin-left:0;
+  span{
+    grid-row:1;
+    grid-column: 2;
+    margin-left:0;
+  }
+  p{
+    grid-column: 2;
+    grid-row: 2;
+    margin-left:0;
+  }
+  div{
+    grid-column: 1;
+    grid-row:1 / 3;
+  }
+}
+.review-container{
+  display:flex;
+  gap:1rem;
+  margin:0;
 }
 
-
+.review-img{
+  display:grid;
+  background-color:var(--color-round-bg) ;
+  max-width: 416px;
+  height: 315px;
+  align-items: center;
+  justify-content: start;
+  margin-left:0;
+  padding:2rem;
+  gap:1rem;
+  border-radius: .5rem;
+  .quote-img{
+    margin-left:0;
+    position: absolute;
+    margin-bottom: 19rem;
+    margin-left:-1rem;
+  }
+  .star-rating{
+    margin-left:0;
+  }
+}
 
 
 
@@ -1728,11 +1776,15 @@ body{
   .c4-5{
       display:flex;
       .Soc-med-review{
-        margin:0 auto;
+        margin-left:0;
         display:flex;
         padding-top:5rem;
         padding-bottom:5rem;      
         gap: 2rem;
+        flex-direction: row;
+        h1{
+          margin-left:0;
+        }
       }
   }
   .c5{

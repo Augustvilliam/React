@@ -1664,14 +1664,19 @@ body{
 
   }
   .c4-5{
+    display:flex;
+    .Soc-med-review{
+      margin:0 auto;
       display:flex;
-      .Soc-med-review{
-        margin:0 auto;
-        display:flex;
-        padding-top:5rem;
-        padding-bottom:5rem;      
-        gap: 2rem;
+      padding-top:5rem;
+      padding-bottom:5rem;      
+      gap: 2rem;
+      flex-direction: row;
+      justify-content: space-between;
+      h1{
+        margin-left:0;
       }
+    }
   }
   .c5{
     display:grid;
