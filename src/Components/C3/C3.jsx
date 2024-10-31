@@ -2,8 +2,7 @@ import React from 'react'
 
 function C3() {
   return (
-    <>
-      <div>
+
           <div className="bg-primary">
             <div className="c3 container ">
                 <h1 className="header-small">How Does It Work?</h1>
@@ -20,8 +19,7 @@ function C3() {
                 </div>
             </div>
         </div>
-    </div>
-    </>
+
   )
 }
 

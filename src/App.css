@@ -1,3 +1,36 @@
+.ml01{
+  margin-left: .1rem;
+}
+.ml02{
+  margin-left: .2rem;
+}
+.ml03{
+  margin-left: .3rem;
+}
+.ml04{
+  margin-left: .4rem;
+}
+.ml05{
+  margin-left: .5rem;
+}
+.ml06{
+  margin-left: .6rem;
+}
+.ml07{
+  margin-left: .7rem;
+}
+.ml08{
+  margin-left: .8rem;
+}
+.ml09{
+  margin-left: .9rem;
+}
+.ml1{
+  margin-left: 1rem;
+}
+
+
+
 .btn-primary {
     background-color: var(--color-btn-primary);
     color: var(--color-white);
@@ -1094,11 +1127,7 @@ body{
       margin-right: 2rem;
     }
   }   
-  /* .Subscirbe-form{
-    display:flex;
-    padding-top:rem;
-    
-  } */
+
   .email-subscribe{
       background-color: var(--clr-primary);
       align-items: center;
@@ -1197,8 +1226,8 @@ body{
   }
 }
 .c1-contact{
-  display:flex;
-
+  display:grid;
+  grid-template-columns: 1fr auto;
 }
 
 .row-group{
@@ -1223,6 +1252,17 @@ body{
 
 }
 
+.info-box{
+  display:flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap:.5rem;
+  h1, p, div{
+    margin:0;
+  }
+}
+
 .contact-c2{
   display:grid;
   grid-template-columns: 60% 40%;
@@ -1235,7 +1275,10 @@ body{
 }
 
 .float-form{
-
+  margin-right:1rem;
+  width: 640px;
+  height: 720px;
+  grid-column:3 ;
   form{
     padding:2rem;
     display: flex;
@@ -1244,6 +1287,7 @@ body{
     border-radius: .5rem;
     background-color: white;
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.13);
+    position:absolute;
     
   }
   button{
@@ -1269,6 +1313,7 @@ body{
 .left-group{
   display:flex;
   flex-direction: column;
+  margin-left:1rem;
   h1{
     margin:0;
     padding-bottom:1rem;
@@ -1775,8 +1820,9 @@ body{
   }
   .c4-5{
       display:flex;
+      justify-content: center;
+      align-items: center;
       .Soc-med-review{
-        margin-left:0;
         display:flex;
         padding-top:5rem;
         padding-bottom:5rem;      

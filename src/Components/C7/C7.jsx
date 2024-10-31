@@ -1,10 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
 
 function C7() {
   return (
     <>
-          <div className="c7">
-            <p  className="s-text-footer">©  2024 Silicon. All rights Reserved. Credit madrasThemes </p>
+        <div className="c7">
+          <Footer />
         </div>
     </>
   )
