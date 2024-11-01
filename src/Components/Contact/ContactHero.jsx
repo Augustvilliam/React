@@ -8,7 +8,7 @@ function ContactHero() {
             <div className="row-group">
                 <img src="img/house.svg" alt=""/>
                 <a href="">Homepage</a>
-                <span><i class="fa-solid fa-angles-right"></i></span>
+                <span><i className="fa-solid fa-angles-right"></i></span>
                 <a href="">Contacts</a>
             </div>
             <h1>Contact us</h1>
