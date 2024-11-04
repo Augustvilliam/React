@@ -4,10 +4,18 @@ import React, { useState } from 'react'
   
   const [formData, setFormData] = useState({fullName:'', email:'', specialist:''})
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] =useState ({})
   
   const handleChange =(e) => {
     const { name, value} = e.target
     setFormData({...formData, [name]: value})
+
+    if (value.trim() === '') {
+      setErrors (prevErrors => ({...prevErrors, [name]: 'This field is requierd!'}))
+    } else {
+      setErrors (prevErrors => ({...prevErrors, [name]: ''}))
+    }
+
   }
 
   const handleOk = () => {
@@ -16,6 +24,20 @@ import React, { useState } from 'react'
 
   const handleSubmit = async (e)  => {
     e.preventDefault()
+
+    const newErrors = {}
+    Object.keys(formData).forEach(field => {
+      if (formData[field].trim() === '') {
+        newErrors[field] = 'This field is required!'
+      }
+    })
+
+    if(Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    } 
+
+
     const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
       method: 'post',
       headers:{
@@ -53,14 +75,27 @@ import React, { useState } from 'react'
         <form onSubmit={handleSubmit}>
             <h1>Get online Consulation</h1>
             
-            <label htmlFor="input-name">Full name</label>
-            <input name="fullName" value={formData.name} onChange={handleChange} className="input-name" id="input-name" type="text"/>
-            
-            <label htmlFor="input-email">Email</label>
-            <input name="email" value={formData.email} onChange={handleChange}  className="input-email" id="input-email" type="email"/>
-            
-            <label htmlFor="input-specialist">Specialist</label>
-            <input name="specialist" value={formData.specialist} onChange={handleChange}  className="input-specialist" id="input-specialist" type=""/>
+            <div>
+              <label htmlFor="input-name">Full name</label>
+              <input name="fullName" value={formData.name} onChange={handleChange} className="input-name" id="input-name" type="text"/>
+              <p>{errors.fullName && errors.fullName}</p>
+            </div>
+
+            <div>
+              
+              <label htmlFor="input-email">Email</label>
+              <input name="email" value={formData.email} onChange={handleChange}  className="input-email" id="input-email" type="email"/>
+              <p>{errors.email && errors.email}</p>
+            </div>
+
+
+            <div>
+              <label htmlFor="input-specialist">Specialist</label>
+              <input name="specialist" value={formData.specialist} onChange={handleChange}  className="input-specialist" id="input-specialist" type=""/>
+              <p>{errors.email && errors.email}</p>
+            </div>
+
+          
            
             <button className="btn-primary">Make an apointment</button>
         </form>
