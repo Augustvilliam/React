@@ -1,4 +1,5 @@
 import React from 'react'
+import EmailForm from './EmailForm'
 
 function C6() {
   return (
@@ -10,10 +11,7 @@ function C6() {
             <p className="label-desk h4">Subscribe to our newsletter to stay informed about latest updates</p>
             </div>
             <div className="textbox-sub">
-            <form className="textbox" action="#" method="get">
-                <input type="email" className="form-input" id="email" name="email" required placeholder="Your email"></input>
-                <button aria-label="Subscribe for email newsletter!" className="btn-subscribe">Subscirbe</button>
-            </form>
+            <EmailForm />
             </div>
         </div>
     </>

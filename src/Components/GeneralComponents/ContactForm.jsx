@@ -75,24 +75,24 @@ import React, { useState } from 'react'
         <form onSubmit={handleSubmit}>
             <h1>Get online Consulation</h1>
             
-            <div>
+            <div className="form-container">
               <label htmlFor="input-name">Full name</label>
               <input name="fullName" value={formData.name} onChange={handleChange} className="input-name" id="input-name" type="text"/>
-              <p>{errors.fullName && errors.fullName}</p>
+              <p className="error-text">{errors.fullName && errors.fullName}</p>
             </div>
 
-            <div>
+            <div className="form-container">
               
               <label htmlFor="input-email">Email</label>
               <input name="email" value={formData.email} onChange={handleChange}  className="input-email" id="input-email" type="email"/>
-              <p>{errors.email && errors.email}</p>
+              <p className="error-text">{errors.email && errors.email}</p>
             </div>
 
 
-            <div>
+            <div className="form-container">
               <label htmlFor="input-specialist">Specialist</label>
               <input name="specialist" value={formData.specialist} onChange={handleChange}  className="input-specialist" id="input-specialist" type=""/>
-              <p>{errors.email && errors.email}</p>
+              <p className="error-text">{errors.specialist && errors.specialist}</p>
             </div>
 
           
