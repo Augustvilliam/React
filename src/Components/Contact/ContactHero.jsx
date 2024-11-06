@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactForm from '../GeneralComponents/ContactForm'
+import { NavLink } from 'react-router-dom'
 
 function ContactHero() {
   return (
@@ -7,9 +8,9 @@ function ContactHero() {
         <div className="left-group">
             <div className="row-group">
                 <img src="img/house.svg" alt=""/>
-                <a href="">Homepage</a>
-                <span><i className="fa-solid fa-angles-right"></i></span>
-                <a href="">Contacts</a>
+                <NavLink to="/">Homepage</NavLink>
+                    <span><i className="fa-solid fa-angles-right"></i></span>
+                <NavLink to="/Contact">Contacts</NavLink>
             </div>
             <h1>Contact us</h1>
             <div className="contact-group" id="contact-group-1">

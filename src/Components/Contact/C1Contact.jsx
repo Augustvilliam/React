@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from '../C1/Header'
 import ContactHero from './ContactHero'
-import Footer from '../C7/Footer'
+import Testmenu from '../Testcomponent/Testmenu'
 
 function C1Contact() {
   return (
     <>
  <div className="c1 bg-gradient">
     <div className="container">
-        <Header />
+        <Testmenu />
         <ContactHero />
     </div>
 </div>
