@@ -6,7 +6,7 @@ import Testmenu from '../Testcomponent/Testmenu'
 function C1Contact() {
   return (
     <>
- <div className="c1 bg-gradient">
+ <div className="c1 bg-primary">
     <div className="container">
         <Testmenu />
         <ContactHero />

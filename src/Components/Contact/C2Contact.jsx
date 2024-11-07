@@ -4,45 +4,39 @@ function C2Contact() {
   return (
 <div className="container contact-c2">
     <div className="map-img">
+        <a target="_blank" href='https://www.google.se/maps/'>Need directions? Press here!</a>
         <img src="src/assets/img/map.svg" alt=""/>
     </div>
     <div className="info-box" id="info-box1">
         <h1>Medical Center 1</h1>
-        <p><img src="src/assets/img/map-pin.svg" alt=""/>4517 Washington Ave. Manchester, Kentucky 39495</p>
-        <p><img src="src/assets/img/phone-icon.svg" alt=""/>(406) 555-0120</p>
-        <div className="flex-me m-left-0">
-            <p className="m-left-0"> <img src="src/assets/img/clock.svg" alt=""/>mon-fri:9:00 am - 22:00 pm
-            </p>
-        </div>
-        <div className="flex-me">
-            <p className="m-left-1">mon-fri:9:00 am - 22:00 pm</p>
-        </div> 
+        <p className='pixels05'><img src="src/assets/img/map-pin.svg" alt=""/>4517 Washington Ave. Manchester,</p>
+        <p className='pixels20'>Kentucky 39495</p>
+        <p className='pixels05'></p>
+        <p className='pixels05'><img src="src/assets/img/phone-icon.svg" alt=""/>(406) 555-0120</p>
+        <p className='pixels05'> <img src="src/assets/img/clock.svg" alt=""/>mon-fri:9:00 am - 22:00 pm </p>
+        <p className='pixels20'>mon-fri:9:00 am – 20:00 am</p>
     </div>
     <div className="info-box" id="info-box2">
-        <h1>Medical Center 1</h1>
-        <p><img src="src/assets/img/map-pin.svg" alt=""/>4517 Washington Ave. Manchester, Kentucky 39495</p>
-        <p><img src="src/assets/img/phone-icon.svg" alt=""/>(406) 555-0120</p>
-        <div className="flex-me">
-            <p><img src="src/assets/img/clock.svg" alt=""/>mon-fri:9:00 am - 22:00 pm </p>
-        </div>
-        <div className="flex-me">
-            <p>mon-fri:9:00 am - 22:00 pm</p>
-        </div> 
-        <div className="flex-me">
-            <a className="media-btn" href="">
+        <h1>Medical Center 2 </h1>
+        <p className='pixels05'><img src="src/assets/img/map-pin.svg" alt=""/>2464 Royal Ln. Mesa,New Jersey 45463</p>
+        <p className='pixels05' ><img src="src/assets/img/phone-icon.svg" alt=""/>(406) 544-0123</p>
+        <p className='pixels05'><img src="src/assets/img/clock.svg" alt=""/>mon-fri:9:00 am - 22:00 pm </p>
+        <p className='pixels20'>mon-fri:9:00 am – 20:00 am</p>
+    </div>
+        <div className="flex-me media-row">
+            <a target="_blank" className="media-btn" href="https://www.facebook.com">
                 <img src="src/assets/img/facebook.svg" alt=""/>
             </a>
-            <a className="media-btn" href="">
+            <a target="_blank" className="media-btn" href="https://www.x.com" >
                 <img src="src/assets/img/shitter.svg" alt=""/>
             </a>
-            <a className="media-btn" href="">
+            <a target="_blank" className="media-btn" href="https://www.instagram.com" >
                 <img src="src/assets/img/instagram.svg" alt=""/>
             </a>
-            <a className="media-btn" href="">
+            <a target="_blank" className="media-btn" href="https://www.youtube.com" >
                 <img src="src/assets/img/youtube.svg" alt=""/>
             </a>
         </div>
-    </div>
 </div>
   )
 }
