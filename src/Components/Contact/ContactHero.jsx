@@ -17,13 +17,13 @@ function ContactHero() {
                 <img className="img-round" src="src/assets/img/envelope.svg" alt="Envelope image"/>
                 <h1>Email us</h1>
                 <p>Please feel free to drop us a line. We will<br/> respond as soon as possible.</p>
-                <a href="">Leave a message<img className='right-arrow' src="src/assets/img/blue-arrow.svg" alt=""/></a>
+                <a className='flex-me' href="">Leave a message<img className='right-arrow' src="src/assets/img/blue-arrow.svg" alt=""/></a>
             </div>
             <div id="contact-group-2" className="contact-group">
                 <img className="img-round" src="src/assets/img/add-group.svg" alt="Envelope image"/>
                 <h1>Careers</h1>
                 <p>Sit ac ipsum leo lorem magna nunc mattis<br/> maecenas non vestibulum.</p>
-                <a href="">Send an application 
+                <a className='flex-me' href="">Send an application 
                     <img className='right-arrow' src="src/assets/img/blue-arrow.svg" alt=""/>
                 </a>
             </div>

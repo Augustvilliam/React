@@ -4,11 +4,38 @@ import React, { useState } from 'react'
   
   const [formData, setFormData] = useState({fullName:'', email:'', specialist:''})
   const [submitted, setSubmitted] = useState(false)
-  const [errors, setErrors] =useState ({})
+  const [errors, setErrors] = useState ({})
+  
+  const validateField = (name, value) => {
+    let error = ''
+    if (name === 'name' && !/^[A-Za-z]+(?:[ -][A-Za-z]+)*$/.test(value)){
+      error = "You must ender a valid name (eg. user@example.com)"
+    }
+
+    setErrors(prevErrors=> ({...prevErrors, [name]: error}))
+  }
+
+  const validateForm = () => {
+    const newErrors = {}
+
+    if (!/^^[A-Za-z]+(?:[ -][A-Za-z]+)*$/.test(formData.fullName)) {
+      newErrors.fullName = "You must enter a valid name"
+    }
+
+    if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(formData.email)) {
+      newErrors.email = "You must ender a valid email (eg. user@example.com)"
+    }
+
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0;
+  }
   
   const handleChange =(e) => {
     const { name, value} = e.target
     setFormData({...formData, [name]: value})
+
+    validateField(name, value)
 
     if (value.trim() === '') {
       setErrors (prevErrors => ({...prevErrors, [name]: 'This field is requierd!'}))
@@ -24,7 +51,23 @@ import React, { useState } from 'react'
 
   const handleSubmit = async (e)  => {
     e.preventDefault()
-
+    if (validateForm()) {
+      console.log('form valid')
+      const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
+        method: 'post',
+        headers:{
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+        
+      })
+  
+      if (res.ok) {
+        setSubmitted(true)
+        setFormData({fullName:'', email:'', specialist:''})
+      } 
+      
+    }
     const newErrors = {}
     Object.keys(formData).forEach(field => {
       if (formData[field].trim() === '') {
@@ -38,19 +81,7 @@ import React, { useState } from 'react'
     } 
 
 
-    const res = await fetch('https://win24-assignment.azurewebsites.net/api/forms/contact', {
-      method: 'post',
-      headers:{
-      'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-      
-    })
 
-    if (res.ok) {
-      setSubmitted(true)
-      setFormData({fullName:'', email:'', specialist:''})
-    } 
    
   }
 
@@ -72,7 +103,7 @@ import React, { useState } from 'react'
  
   return (
     <div className="float-form">
-        <form onSubmit={handleSubmit}>
+        <form noValidate onSubmit={handleSubmit}>
             <h1>Get online Consulation</h1>
             
             <div className="form-container">
