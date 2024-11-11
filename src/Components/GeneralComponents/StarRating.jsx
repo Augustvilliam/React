@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext} from "react";
 import { FaStar } from "react-icons/fa";
 
 const StarRating = ({ rating }) => {
