@@ -9,9 +9,7 @@ function C2Contact() {
     </div>
     <div className="info-box" id="info-box1">
         <h1>Medical Center 1</h1>
-        <p className='pixels05'><img src="src/assets/img/map-pin.svg" alt=""/>4517 Washington Ave. Manchester,</p>
-        <p className='pixels20'>Kentucky 39495</p>
-        <p className='pixels05'></p>
+        <p className='pixels05'><img src="src/assets/img/map-pin.svg" alt=""/>4517 Washington Ave. Manchester,Kentucky 39495</p>
         <p className='pixels05'><img src="src/assets/img/phone-icon.svg" alt=""/>(406) 555-0120</p>
         <p className='pixels05'> <img src="src/assets/img/clock.svg" alt=""/>mon-fri:9:00 am - 22:00 pm </p>
         <p className='pixels20'>mon-fri:9:00 am – 20:00 am</p>
