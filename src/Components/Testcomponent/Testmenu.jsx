@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import Darkmode from '../C1/darkmode';
 import { Link, NavLink } from 'react-router-dom';
+import SignInBtn from '../buttons/SignInBtn';
 function Testmenu() {
     const [selected, setSelected] = useState(false)
     const toggle = () => {
@@ -14,22 +15,16 @@ function Testmenu() {
         <img src="src/assets/img/silicon.svg" alt="sili logo"></img>
         <p>Silicon</p>
     </Link> 
-    <nav className="feat">
-        <a href="#">Features</a>
-    </nav>
+    <NavLink className="feat" to='/'> Features</NavLink>
     <NavLink className="contact-link" to='/contact'>Contact</NavLink>
     <Darkmode />
-    <a className="btn-sign-in" href="#">
-        <img src="src/assets/img/Bg/signin.svg" alt="gubbe"></img>
-        sign in / up
-    </a>
+    <SignInBtn />
     
     <button onClick={toggle} aria-label="Open menu" className="btn-menu">
         <i className="fa-solid fa-bars"></i>
     </button>
     <div className={selected ? "Phone-menu-open" : "Phone-menu"}>
-        <button className='btn-round' onClick={toggle}>X</button>
-        <p>Please Choose which Page <br/> You Want To Visit</p>
+        <p>Please Choose Which Page <br/> You Want To Visit</p>
         <ul>
             <li><NavLink to="/">Features</NavLink></li>
             <li><NavLink to="/Contact">Contacts</NavLink></li>

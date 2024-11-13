@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
- function ContactForm({isToggled}) {
+ function ContactForm({isToggled, onClose }) {
   const [formData, setFormData] = useState({fullName:'', email:'', specialist:''})
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState ({})
@@ -81,6 +81,9 @@ import React, { useState } from 'react'
     return (
       <div className={`float-form ${isToggled ? 'float-form-mobile' : ''}`}>
       <form onSubmit={handleSubmit}>
+        <div className='btn-close'>
+            <button onClick={onClose} className='btn-close'>X</button>
+          </div>
         <h1>Tack för din bokning!</h1>
         <p>Vi återkommer så snart vi kan</p>
         <button onClick={handleOk}  className="btn-primary">OK</button>
@@ -93,6 +96,9 @@ import React, { useState } from 'react'
   return (
     <div className={`float-form ${isToggled ? 'float-form-mobile' : ''}`}>
         <form noValidate onSubmit={handleSubmit}>
+          <div className='btn-close'>
+            <button onClick={onClose} className='btn-close'>X</button>
+          </div>
             <h1>Get online Consulation</h1>
             
             <div className="form-container">
@@ -107,8 +113,6 @@ import React, { useState } from 'react'
               <input name="email" value={formData.email} onChange={handleChange}  className="input-email" id="input-email" type="email"/>
               <p className="error-text">{errors.email && errors.email}</p>
             </div>
-
-
             <div className="form-container">
               <label htmlFor="input-specialist">Specialist</label>
               <select name="specialist" value={formData.specialist} onChange={handleChange} className="input-specialist" id="input-specialist">
@@ -120,9 +124,6 @@ import React, { useState } from 'react'
               
               <p className="error-text">{errors.specialist && errors.specialist}</p>
             </div>
-
-          
-           
             <button className="btn-primary">Make an apointment</button>
         </form>
     </div>

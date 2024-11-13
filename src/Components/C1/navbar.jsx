@@ -1,4 +1,5 @@
 import React from 'react'
+import SignInBtn from '../buttons/SignInBtn'
 
 function navbar() {
   return (
@@ -8,10 +9,7 @@ function navbar() {
         </nav>
         <a className="contact-link" href="/contact.html">Contact</a>
         <Darkmode />
-        <a className="btn-sign-in" href="#">
-            <img src="src/assets/img/Bg/signin.svg" alt="gubbe"></img>
-            sign in / up
-        </a>
+        <SignInBtn />
         <button aria-label="Open menu" className="btn-menu">
             <i className="fa-solid fa-bars"></i>
         </button>
